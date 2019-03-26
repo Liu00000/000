@@ -156,7 +156,7 @@
 	var shi=oDate.getHours();
 	var fen=oDate.getMinutes();
 	var miao=oDate.getSeconds();
-	
+	//补零函数
 	function fun(a){
 		if(a<10){
 			return "0"+a;
@@ -164,7 +164,7 @@
 			return ""+a;
 		}
 	}
-	
+	//点击发表发表内容
 	oBoxBut.onclick=function(){
 			if(InputO.value!=""&&InputT.value!=""){
 				var a=document.createElement("div");
@@ -184,6 +184,7 @@
 			oBoxTOP3.className="boxT_OP3";
 		}
 	}
+	//点击发文
 	oBoxLi.onclick=function(){
 		if(getStyle(oBoxT,"display")=="none"){
 			oBoxT.style.display="block";
@@ -191,17 +192,20 @@
 		}else{
 			oBoxT.style.display="none";
 		}
-    }
+	}
+	//点击换肤
     oBoxLi1.onclick = function(){
         if(getStyle(oBoxH,"display")=="none"){
 			oBoxH.style.display="block";
             oBox.style.display="none";
-            oBoxThree.style.display = "none";
+			oBoxThree.style.display = "none";
+			Body.style.background ="rgba(255,255,255,0.5)"
 		}else{
             oBoxThree.style.display="block";
 			oBoxH.style.display="none";
 		}
-    }
+	}
+	//获取非行间样式
 	function getStyle(obj,attr){    //获取非行间样式，obj是对象，attr是值
 	    if(obj.currentStyle){   //针对ie获取非行间样式
 	        return obj.currentStyle[attr];
@@ -209,6 +213,7 @@
 		        return getComputedStyle(obj,false)[attr];   //针对非ie
 		    };
 		};
+		//点击切换小三角间距
 	oBoxSpan.onclick=function(){
 		if(getStyle(oBox,"display")=="none"){
 			oBox.style.display="block";
@@ -221,8 +226,8 @@
     var oBoxH = document.getElementById("HuanFu");
     var oLi = oBoxH.getElementsByTagName("li");
     var Body = document.getElementsByTagName("body")[0];
-    var oImg = oBoxH.getElementsByTagName("img");
-    // var index = 0;
+	var oImg = oBoxH.getElementsByTagName("img");
+	//切换图片
     for(var i = 0;i<oLi.length;i++){
         oLi[i].index = i;
         oImg[i].index = i;
@@ -233,14 +238,6 @@
             Body.style.background= "url("+oImg[this.index].src+")";
             oBoxH.style.display = "none";
             localStorage.setItem("name",oLi[this.index].index);
-            // setCookie("name",oLi[this.index].index);
-            // var value = oLi[this.index].index;
-            // var date = new Date();					
-            // date.setDate(date.getDate() + 7);
-            // document.cookie = "user="+encodeURIComponent(value)+";expires="+date;
-            // alert("保存成功");
-            // alert(1)
-
                 // alert("ssss")
         }
     }
@@ -248,10 +245,51 @@
     maxName= localStorage.getItem("name");
 //   var maxName=getCookie("user");
     Body.style.background= "url("+oImg[maxName].src+")";
-    // currentindex = getCookie("tabIndex");
+	// currentindex = getCookie("tabIndex");
+	//点击关闭隐藏
     var Guan = document.getElementById("Guan");
     Guan.onclick = function(){
         oBoxH.style.display = "none";
+	}
+	
+//拖拽
+function getWidth(){
+    var w = document.documentElement.clientWidth || document.body.clientWidth;
+    return w;
+}
+function getHeight(){
+    var h= document.documentElement.clientHeight || document.body.clientHeight;
+    return h;
+}
+//鼠标按下
+oBoxH.onmousedown = function (event) {
+    var e = event || window.event;
+    //点击的坐标距离盒子本身的距离
+    var disX = e.clientX - oBoxH.offsetLeft;
+    var disY = e.clientY - oBoxH.offsetTop;
+    document.onmousemove = function (event) {
+        var e = event || window.event;
+        var l = e.clientX - disX;
+        var t = e.clientY - disY;
+        if(t <= 0){
+            t = 0;
+        }
+        if(l <= 0){
+            l = 0;
+        }
+        if(l > getWidth() - oBoxH.offsetWidth){
+            l = getWidth() - oBoxH.offsetWidth;
+        }
+        if(t > getHeight() - oBoxH.offsetHeight){
+            t = getHeight() - oBoxH.offsetHeight;
+        }
+        oBoxH.style.left = l + "px";
+        oBoxH.style.top = t + "px";
+        oBoxH.style.margin = "0"
     }
+    document.onmouseup = function () {
+        document.onmousemove = null;
+    }
+}
 </script>
 <script src="cookie.js"></script>
