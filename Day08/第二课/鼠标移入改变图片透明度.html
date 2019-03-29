@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+         #boxOne{width: 750px;height: 300px;border: 1px solid #333;position: absolute;top: 25%;left: 25%;}
+        #boxOne ul{list-style: none;}
+        #boxOne ul li{width: 128px;height: 128px;border: 1px solid #333; float: left;margin: 10px 10px 10px 10px;}
+        #boxOne li img{float:left;opacity:0.3;cursor:crosshair;filter:alpha(opacity=30);}
+        #boxOne li.current img{opacity:1;filter:alpha(opacity=100);}
+
+    </style>
+</head>
+<body>
+    <div id="boxOne">
+        <ul>
+            <li><img src="img/1.jpg"></li>
+            <li><img src="img/2.jpg"></li>
+            <li><img src="img/3.jpg"></li>
+            <li><img src="img/4.jpg"></li>
+            <li><img src="img/5.jpg"></li>
+            <li><img src="img/6.jpg"></li>
+            <li><img src="img/7.jpg"></li>
+            <li><img src="img/8.jpg"></li>
+            <li><img src="img/9.jpg"></li>
+            <li><img src="img/10.jpg"></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var oLi = document.getElementsByTagName("li");
+    for(var i = 0;i<oLi.length;i++){
+        oLi[i].onmouseover = function(){
+            this.className="current";
+        }
+        oLi[i].onmouseout = function(){
+            this.className = "";
+        }
+    }
+</script>

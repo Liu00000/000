@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数接收并传参</title>
+</head>
+<body>
+    <input type="text" id="InputO"> 
+<input type="text" id="InputT"> 
+ <button id="Chuan">传参</button>
+ 
+</body>
+</html>
+<script>
+    //创建函数弹出输入框的值
+   var myValue= function (a,b){
+        alert(a.value);
+        alert(b.value);
+    }
+    //获取输入框和按钮的属性
+    var Oinp = document.getElementsByTagName("input");
+    var oBtn = document.getElementById("Chuan");
+    //点击按钮弹出输入框的值
+    oBtn.onclick = function(){
+        myValue(Oinp[0],Oinp[1])
+    }
+</script>

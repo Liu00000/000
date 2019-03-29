@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #countdown{width:300px;text-align:center;margin:10px auto;padding:20px 0;}
+        button{background: #f90; border:0;width:283px;height:50px;cursor:pointer;margin-top:20px;background:url(img/btn-1.png) no-repeat;}
+        button.cancel{background-position:0 -50px;}
+        span{color:#ccc;width:80px;line-height:2;background:#fbfbfb;border:2px solid #b4b4b4;margin:0 10px;padding:0 10px;}
+
+    </style>
+</head>
+<body>
+    <div id="countdown">
+        <span>01</span>分钟<span>40</span>秒
+        <button></button>
+    </div>
+</body>
+</html>
+<script>
+
+    var oCountDown = document.getElementById("countdown");	
+	var oButton = oCountDown.getElementsByTagName("button")[0];
+	var timer = null;
+	
+	
+</script>

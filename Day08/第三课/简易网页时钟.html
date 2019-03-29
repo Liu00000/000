@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        #boxOne{width:300px;height: 100px; text-align:center;background: #eee}
+        span{color: #333;width: 80px;line-height: 2px;background: #fbfbfb;border: 2px solid #b4b4b4;margin: 0 10px; padding: 0 10px;}
+    </style>
+</head>
+<body>
+    <div id="boxOne">
+        <span>xx</span>点<span>xx</span>分<span>xx</span>秒
+    </div>
+</body>
+</html>
+<script>
+    var oBoxOne = document.getElementById("boxOne");
+    var oSpan = oBoxOne.getElementsByTagName("span");
+
+    function gitTime(){
+        var oDate = new Date();
+        var aDate = [oDate.getHours(),oDate.getMinutes(),oDate.getSeconds()];
+        for(var i in aDate){
+            aSpan[i]
+        }
+    }
+     
+</script>

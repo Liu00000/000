@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            color: #999;
+            font: 12px/1.5 tahoma;
+        }
+        #outer{
+            width: 500px;
+            margin: 0 auto;
+        }
+        #outer input{
+            padding: 3px;
+            border: 1px solid #cccccc;
+            font-family: inherit;
+            width: 220px;
+            margin-right: 10px;
+        } 
+        .sum{
+            font-size: 30px;
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <label><input type="text" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15"></label><span>输入数字求和，数字之间用半角","分隔</span>
+        <p><button>求和</button></p>
+        <strong class="sum"></strong>
+    </div>
+</body>
+</html>
+<script>
+    //第一步   获取元素
+    // var oInput = document.getElementsByTagName("input")[0];
+    // var oBtn = document.getElementsByTagName("button")[0];
+    // var oStrong = document.getElementsByTagName("Strong")[0];
+    // var num = 0;//用来保存累加值
+    // //第二步  获取文本框的内容
+    // var oValue = oInput.value;
+    // //第三步   将文本内容转换成数组
+    // var arrValue = oValue.split(",");
+    // //第四步   遍历数组，将数组的数据转为number类型，进行累加
+    // oBtn.onclick = function(){
+    //     for(var i =0;i<arrValue.length;i++){
+    //         num = num+parseInt(arrValue[i]);
+    //     }
+    //     oStrong.innerHTML = num ;
+    // }
+
+
+    //第一步  获取元素
+    // var oInput = document.getElementsByTagName("input")[0];
+    // var oBtn = document.getElementsByTagName("button")[0];
+    // var oStrong = document.getElementsByTagName("Strong")[0];
+    // var num = 0;//用来保存累加值;
+    // //第二步 获取文本框的内容
+    // var oValue = oInput.value;
+    // //第三步  将文本内容转换成数组;
+    // var  arrValue = ovalue.split(",");
+    // //第四步   遍历数组，将数组数据转为number类型，进行累加;
+    // oBtn.onclick = function(){
+    //     for(var i = 0;i<arrValue.length;i++){
+    //         num = num+parseInt(arrValue[i]);
+    //     }
+    //     oStrong.innerHTML = num;
+    // }
+
+    //第一步  获取元素
+    var oInput  = document.getElementsByTagName("input")[0];
+    var oBtn = document.getElementsByTagName("button")[0];
+    var oStrong = document.getElementsByTagName("strong")[0];
+    var num = 0 ;//保存累加值
+    //第二步 获取文本框的内容
+    var oValue = oInput.value;
+    //第三步  将文本内容转换成数组
+    var arrValue = oValue.split(",");
+    //第四步  遍历数组，将数组转为number类型，进行累加；
+    oBtn.onclick = function(){
+        for(var i=0;i<arrValue.length;i++){
+            num = num+parseInt(arrValue[i]);
+        }
+        oStrong.innerHTML = num;
+    }
+</script>

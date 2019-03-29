@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+    div{width: 100px;height: 100px;background: #333;margin:10px;}
+</style>
+</head>
+<body>
+<!-- <div> -->
+    <div></div>
+    <div></div>
+    <div></div>
+    <button>点击将div变成红色</button>
+<!-- </div> -->
+</body>
+</html>
+<script>
+var oDiv =document.getElementsByTagName("div");
+var oBtn = document.getElementsByTagName("button")[0];
+
+    oBtn.onclick = function(){
+for(var i = 0;i<oDiv.length;i++){
+       oDiv[i].style.background = "red"
+    }
+}
+</script>

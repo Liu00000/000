@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>控制div属性</title>
+    <style>
+        #box{width: 100px;height: 100px;background: #333;margin: 10px;}
+        .box{width: 100px;height: 100px;background: #333;margin: 10px;}
+    </style>
+</head>
+<body>
+    <button id="Width">变宽</button>
+    <button id="Height">变高</button>
+    <button id="Color">变色</button>
+    <button id="None">隐藏</button>
+    <button id="Resetting">重置</button>
+    <div id="box" class="box"></div>
+</body>
+</html>
+<script>
+    var oWidth = document.getElementById("Width");
+    var oHeight = document.getElementById("Height");
+    var oColor = document.getElementById("Color");
+    var oNone = document.getElementById("None");
+    var oResetting = document.getElementById("Resetting");
+//     var oBtn = document.getElementsByTagName("button");
+    var oBox = document.getElementById("box");
+//     var oAtt = ["width","height","background","display","display"];
+//     var oVal = ["200px","200px","#f90","none","block"]
+//         var changeStyle = function (elem,attr,value){
+//             elem.style[attr] = value;
+//         }
+// for(var i = 0;i<oBtn.length;i++){
+//     oBtn[i].index = i;
+//     oBtn[i].onclick = function(){
+//         this.index == oBtn.length-1 && (oBox.style.cssText = "");
+//         changeStyle(oBox,oAtt[this.index],oVal[this.index])
+//   }
+// }
+
+
+
+
+
+
+    oWidth.onclick = function(){
+        oBox.style.width = "200px";
+    }
+    oHeight.onclick = function(){
+        oBox.style.height = "200px";
+    }
+    oColor.onclick = function(){
+        oBox.style.background = "#f90";
+    }
+    oNone.onclick = function(){
+        oBox.style.display = "none";
+    }
+    oResetting.onclick = function(){
+        oBox.style.cssText ="";
+        oBox.style.display = "block"
+    }
+</script>

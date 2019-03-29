@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>记住密码提示框</title>
+    <style>
+        #TiShi{ background:orange;display:none;font-size:15px;width: 200px;height: 50px;border: 1px solid #f90}
+        span{cursor: pointer;}
+    </style>
+</head>
+<body>
+    <span><input type="checkbox">两周内自动登陆</span>
+    <div id="TiShi">
+        为了您的信息安全,请不要在网吧或公用电脑上使用此功能!
+    </div>
+</body>
+</html>
+<script>
+    var oSpan = document.getElementsByTagName("span")[0];
+    var oDiv = document.getElementById("TiShi");
+
+    oSpan.onmouseover = function(){
+        oDiv.style.display = "block";
+    }
+    oSpan.onmouseout = function(){
+        oDiv.style.display = "none";
+    }
+</script>

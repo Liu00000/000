@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #boxOne{width: 730px;height: 400px;border: 1px solid #333;position: absolute;top: 30%;left: 30%;}
+        #boxOne h1{font-size: 18px;text-align: center;}
+        #boxOne ul{list-style: none}
+        #boxOne ul li{position: relative; font-size:15px;color: #666; background:#f0f0f0;float: left; margin:30px 20px 30px 20px;width: 100px;height: 100px;border: 1px solid #333;}
+        #boxOne ul li img{display:none;position:absolute;top:-14px;left:-14px;border:2px solid #999;cursor:crosshair;}
+        .zindex{z-index:1;}
+    </style>
+</head>
+<body>
+    <div id="boxOne">
+        <h1>名车车标展示-鼠标移过显示车标</h1>
+        <ul>
+            <li><strong>BMW</strong><br> 宝马汽车
+                <img src="img/1.jpg" alt="">
+            </li>
+            <li><strong>Alfa Romeo</strong><br>阿尔法-罗密欧 
+                <img src="img/2.jpg" alt=""></li>
+            <li><strong>Skoda</strong><br>斯柯达
+                <img src="img/3.jpg" alt=""></li>
+            <li><strong>Volkswagen</strong><br>大众汽车
+                <img src="img/4.jpg" alt=""></li>
+            <li><strong>Saab</strong><br>萨布牌轿车
+                <img src="img/5.jpg" alt=""></li>
+            <li><strong>Lamborghini</strong><br>兰博基尼
+                <img src="img/6.jpg" alt=""></li>
+            <li><strong>Porsche</strong><br>保时捷
+                <img src="img/7.jpg" alt=""></li>
+            <li><strong>Peugeout</strong><br>标致
+                <img src="img/8.jpg" alt=""></li>
+            <li><strong>Mercedesl</strong><br> 梅赛德斯 奔驰
+                <img src="img/9.jpg" alt=""></li>
+            <li>
+                <strong>Buick</strong><br> 别克汽车
+                <img src="img/10.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var oLi = document.getElementsByTagName("li");
+    var oImg = document.getElementsByTagName("img");
+
+    for(var i = 0;i<oLi.length;i++){
+        oLi[i].index = i;
+        oImg[i].index =i;
+        oLi[i].onmouseover = function(){
+            oLi[this.index].className = "zindex";
+            oImg[this.index].style.display = "block";
+        }
+        oLi[i].onmouseout = function(){
+            oLi[this.index].className = "";
+            oImg[this.index].style.display = "none";
+        }
+    }
+</script>
